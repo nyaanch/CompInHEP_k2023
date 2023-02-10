@@ -29,7 +29,7 @@ class Matrix{
         for(int i = 0; i < measurement.size(); i++){
             var += pow(measurement[i]-mu, 2); 
         }
-        var = var/measurement.size();
+        var = var/(measurement.size()-1);
 
         return var;
     };
@@ -43,7 +43,7 @@ class Matrix{
         for(int i = 0; i<xi.size(); i++){
             covar += (xi[i]-muX) * (yi[i]-muY); 
         }
-        covar = covar/xi.size();
+        covar = covar/(xi.size()-1);
 
         return covar;
     };
