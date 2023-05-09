@@ -1,0 +1,11 @@
+#!/bin/tcsh
+setenv PYTHIA8DATA $PWD/pythia8307/share/Pythia8/xmldoc
+setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:$PWD/pythia8307/lib:$PWD/../Pythia8/LHAPDF/lib/
+setenv LHAPATH $PWD/../Pythia8/LHAPDF
+setenv LHAPATH /usr/local/share/LHAPDF
+
+./ex8.exe > ex8.txt
+echo Finished ./ex8.exe
+
+python3 plots.py
+echo Finished python3 plots.py

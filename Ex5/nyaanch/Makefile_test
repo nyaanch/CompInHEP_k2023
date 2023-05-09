@@ -1,0 +1,20 @@
+ROOTCFLAGS  := $(shell root-config --cflags)
+ROOTLIBS    := $(shell root-config --libs)
+#SRC = $(wildcard *.cpp)
+#OBJ = $(addsuffix .o, $(basename $(SRC)))
+
+CXXFLAGS    := -Wall -O2 $(ROOTCFLAGS) -fPIC
+LDFLAGS     := -Wall $(ROOTLIBS)
+
+PROGRAMS    := gen_data plot_data
+
+all: $(PROGRAMS)
+
+gen_data: test.cpp
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
+
+plot_data: tree.cpp
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
+
+clean:
+	rm -f $(PROGRAMS) *.o
