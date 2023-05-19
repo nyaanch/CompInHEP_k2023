@@ -1,0 +1,20 @@
+python3 -m venv VirtualTestEnvironment
+source VirtualTestEnvironment/bin/activate
+
+pip install wheel
+pip install xrootd
+pip install numpy
+pip install coffea
+pip install coffea[spark]
+pip install coffea[parsl]
+pip install coffea[dask]
+
+python3 analysis_coffea.py
+deactivate
+
+sed -i 's/rdataframe/coffea/' plots.py
+python3 plots.py
+
+python3 analysis_rdataframe.py
+sed -i 's/coffea/rdataframe/' plots.py
+python3 plots.py

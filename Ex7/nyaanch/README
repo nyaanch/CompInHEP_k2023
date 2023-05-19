@@ -1,0 +1,15 @@
+cd ex7_1
+
+- get the hdecay
+wget http://tiger.web.psi.ch/hdecay/hdecay.tar.gz
+tar xfvz hdecay.tar.gz
+make
+
+- and set the values inside the hdecay.in:
+MABEG    =   120.10000    
+MAEND    =   140.00000 
+NMA      = 1000
+
+./run
+
+python3 ex7_hdecay.py

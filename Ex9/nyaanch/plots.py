@@ -22,9 +22,11 @@ for event in tree:
 # Customize the histogram properties
 pt.SetLineColor(ROOT.kBlack)
 pt.SetLineWidth(2)
+pt.SetStats(0)
 
 eta.SetLineColor(ROOT.kBlack)
 eta.SetLineWidth(2)
+eta.SetStats(0)
 
 # Customize the canvas properties
 canvas.SetFillColor(ROOT.kWhite)
@@ -48,6 +50,7 @@ eta.Draw()
 # Save the canvas
 canvas.SaveAs("plots.root")
 canvas.SaveAs("plots.pdf")
+canvas.SaveAs("plots.png")
 
 # Close the file
 f.Close()

@@ -26,9 +26,8 @@
 
 
 #include "selector.h"
-#include <TH2.h>
-#include <TStyle.h>
-#include <TCanvas.h>
+#include "TStyle.h"
+#include "TCanvas.h"
 #include <iostream>
 #include "TH1F.h"
 
@@ -109,8 +108,10 @@ void selector::Terminate()
 
    hist->GetXaxis()->SetTitle("Value");
    hist->GetYaxis()->SetTitle("Events");
+   hist->SetStats(0);
 
    hist->Draw();
    canvas->SaveAs("histogram.root");   
    canvas->SaveAs("histogram.pdf");
+   canvas->SaveAs("histogram.png");
 }

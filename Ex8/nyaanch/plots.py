@@ -19,6 +19,7 @@ for event in tree:
 # Customize the histogram properties
 mass.SetLineColor(ROOT.kBlack)
 mass.SetLineWidth(2)
+mass.SetStats(0)
 
 # Customize the canvas properties
 canvas.SetFillColor(ROOT.kWhite)
@@ -49,6 +50,7 @@ with open("width.txt", "a") as results:
 # Save the canvas
 canvas.SaveAs("plots.root")
 canvas.SaveAs("plots.pdf")
+canvas.SaveAs("plots.png")
 
 # Close the file
 f.Close()

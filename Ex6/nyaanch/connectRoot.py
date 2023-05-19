@@ -29,11 +29,16 @@ hist.GetYaxis().SetTitle("Events")
 fitFunc = ROOT.TF1("fitFunc", "gaus", -5.0, 5.0)
 hist.Fit(fitFunc)
 
+hist.SetStats(0)
+canvas.Update()
+
 # Draw the histogram and the fit function
 hist.Draw()
+fitFunc.Draw("same")
 
 # Save the plot to a PNG file
 canvas.SaveAs("hist.root")
+canvas.SaveAs("plot.png")
 
 # Close the ROOT file
 f.Close()

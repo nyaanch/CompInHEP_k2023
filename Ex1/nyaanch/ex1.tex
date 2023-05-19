@@ -1,0 +1,52 @@
+\documentclass{article}
+ 
+\usepackage{feynmf}
+\usepackage{graphicx}
+\usepackage{subfig}
+
+\begin{document}
+
+\begin{fmffile}{Feynman_diagrams}
+  \begin{figure}[ht!]
+    \centering
+    \subfloat{
+      \begin{fmfgraph*}(100,60)
+        \fmfleft{i1,i2}
+        \fmfright{o1,o2}
+        \fmf{fermion,tension=2}{i1,v1}
+        \fmf{fermion,tension=0.5}{v2,i2}
+        \fmf{fermion}{v1,v2}
+        \fmf{photon}{v1,o1}
+        \fmf{photon}{v2,o2}
+        \fmflabel{$e^+$}{i1}
+        \fmflabel{$e^-$}{i2}
+        \fmflabel{$\gamma$}{o1}
+        \fmflabel{$\gamma$}{o2}
+      \end{fmfgraph*}
+    }
+    \subfloat{
+      \begin{fmfgraph*}(100,60)
+        \fmfleft{i1,i2}
+        \fmfright{o1,o2}
+        \fmf{fermion,tension=0.5}{i1,v1}
+        \fmf{fermion,tension=2}{v2,i2}
+        \fmf{fermion}{v1,v2}
+        \fmf{photon}{v1,o1}
+        \fmf{photon}{v2,o2}
+        \fmflabel{$e^+$}{i1}
+        \fmflabel{$e^-$}{i2}
+        \fmflabel{$\gamma$}{o1}
+        \fmflabel{$\gamma$}{o2}
+      \end{fmfgraph*}
+    }
+    \vspace{5mm}
+    \caption{Feynman diagrams for the lowest order contributions to electron-positron annihilation \cite{Feynman_diagrams}.}
+    \label{fig:prod_graph}
+  \end{figure}
+\end{fmffile}
+
+\begin{thebibliography}{9}
+  \bibitem{Feynman_diagrams} B.R. Martin and G. Shaw, \textit{Particle Physics}, John Wiley \& Sons, 1992.
+\end{thebibliography}
+
+\end{document}
