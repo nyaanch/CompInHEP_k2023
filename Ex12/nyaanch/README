@@ -12,9 +12,4 @@ pip install coffea[dask]
 python3 analysis_coffea.py
 deactivate
 
-sed -i 's/rdataframe/coffea/' plots.py
-python3 plots.py
-
 python3 analysis_rdataframe.py
-sed -i 's/coffea/rdataframe/' plots.py
-python3 plots.py
